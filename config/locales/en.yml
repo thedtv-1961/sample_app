@@ -5,12 +5,17 @@ en:
   help: "Help"
   contact: "Contact"
   app_name: "Sample App"
+  news: "News"
   tutorial_name: "Ruby on Rails Tutorial"
-  home_content_html: 'Get help on the Ruby on Rails Tutorial at the
-    <a href="https://www.railstutorial.org/help">Rails Tutorial help section</a>.
-    To get help on this sample app, see the
-    <a href="https://www.railstutorial.org/book"><em>Ruby on Rails Tutorial</em>
-    book</a>.'
+  rails_logo_name: "Rails logo"
+  sign_up_now: "Sign up now!"
+  login: "Log in"
+  home_content_html: '<h1>Welcome to the Sample App</h1>
+    <h2>
+      This is the home page for the
+      <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+      sample application.
+    </h2>'
   about_content_html: 'The <a href="https://www.railstutorial.org/"><em>Ruby on Rails
     Tutorial</em></a> is a
     <a href="https://www.railstutorial.org/book">book</a> and
@@ -25,3 +30,7 @@ en:
     To get help on this sample app, see the
     <a href="https://www.railstutorial.org/book"><em>Ruby on Rails Tutorial</em>
     book</a>.'
+  footer_content_html: 'The <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+    by <a href="http://www.michaelhartl.com/">Michael Hartl</a>'
+  signup_html : '<h1>Sign up</h1>
+    <p>This will be a signup page for new users.</p>'
