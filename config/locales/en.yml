@@ -9,6 +9,7 @@ en:
   tutorial_name: "Ruby on Rails Tutorial"
   rails_logo_name: "Rails logo"
   sign_up_now: "Sign up now!"
+  sign_up: "Sign up"
   login: "Log in"
   home_content_html: '<h1>Welcome to the Sample App</h1>
     <h2>
