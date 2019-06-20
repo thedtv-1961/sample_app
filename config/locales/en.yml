@@ -11,6 +11,8 @@ en:
   sign_up_now: "Sign up now!"
   sign_up: "Sign up"
   login: "Log in"
+  signup_success: "Welcome to the Sample App!"
+  the_form_contain: "The form contains %{errors}"
   home_content_html: '<h1>Welcome to the Sample App</h1>
     <h2>
       This is the home page for the
@@ -33,5 +35,3 @@ en:
     book</a>.'
   footer_content_html: 'The <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
     by <a href="http://www.michaelhartl.com/">Michael Hartl</a>'
-  signup_html : '<h1>Sign up</h1>
-    <p>This will be a signup page for new users.</p>'
