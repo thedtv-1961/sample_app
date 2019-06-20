@@ -6,11 +6,28 @@ en:
   contact: "Contact"
   app_name: "Sample App"
   news: "News"
+  users: "Users"
+  profile: "Profile"
+  setting: "Setting"
   tutorial_name: "Ruby on Rails Tutorial"
   rails_logo_name: "Rails logo"
   sign_up_now: "Sign up now!"
   sign_up: "Sign up"
   login: "Log in"
+  logout: "Log out"
+  create_my_account: "Create my account"
+  new_user: "New user?"
+  signup_success: "Welcome to the Sample App!"
+  login_success: "Login successfully"
+  user_not_exists: "User doesn't exists!"
+  login_fail: "Login failed"
+  txt_name: "Name"
+  txt_email: "Email"
+  txt_password: "Password"
+  txt_password_confirmation: "Confirmation"
+  error:
+    one: "The form contains %{count} error"
+    other: "The form contains %{count} errors"
   home_content_html: '<h1>Welcome to the Sample App</h1>
     <h2>
       This is the home page for the
@@ -33,5 +50,3 @@ en:
     book</a>.'
   footer_content_html: 'The <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
     by <a href="http://www.michaelhartl.com/">Michael Hartl</a>'
-  signup_html : '<h1>Sign up</h1>
-    <p>This will be a signup page for new users.</p>'
