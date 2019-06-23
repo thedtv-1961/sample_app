@@ -2,3 +2,4 @@ length_minimum: 6
 name_length_maximum: 50
 email_length_maximum: 150
 gravatar_size: 80
+remember_me_checked: "1"
