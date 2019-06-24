@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user&.authenticate(params[:session][:password])
       flash[:success] = t "login_success"
-      log_in user
+      remember_me_checked params[:session][:remember_me], user
       redirect_to user
     else
       flash[:danger] = t "login_fail"
@@ -16,7 +16,17 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    log_out if logged_in?
     redirect_to root_path
+  end
+
+  private
+  def remember_me_checked checked, user
+    log_in user
+    if checked == Settings.remember_me_checked
+      remember(user)
+    else
+      forget(user)
+    end
   end
 end
