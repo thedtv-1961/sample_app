@@ -11,8 +11,8 @@ class User < ApplicationRecord
              maximum: Settings.email_length_maximum},
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
-  validates :password, presence: true,
-    length: {minimum: Settings.length_minimum}
+  validates :password, length: {minimum: Settings.length_minimum},
+    allow_nil: true
   has_secure_password
 
   def remember
