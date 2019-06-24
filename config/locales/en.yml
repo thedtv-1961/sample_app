@@ -1,4 +1,5 @@
 en:
+  hi: "Hi"
   title: "Ruby on Rails Tutorial Sample App"
   about: "About"
   home: "Home"
@@ -23,9 +24,16 @@ en:
   user_delete_success: "User deleted"
   user_delete_fail: "User delete failed"
   delete: "Delete"
+  activate: "Activate"
   confirm: "You sure?"
+  version: "v %{version}"
   signup_success: "Welcome to the Sample App!"
   update_your_profile: "Update your profile"
+  please_check_your_email: "Please check your email to activate your account."
+  activation_email_title: "Sample App Account activation"
+  account_not_activated: "Account not activated. Check your email for the activation link."
+  account_activated: "Account activated!"
+  invalid_activation_link: "Invalid activation link"
   login_success: "Login successfully"
   user_not_exists: "User doesn't exists!"
   profile_update: "Profile updated"
@@ -38,6 +46,7 @@ en:
   error:
     one: "The form contains %{count} error"
     other: "The form contains %{count} errors"
+  email_content_activation: "Welcome to the Sample App! Click on the link below to activate your account:"
   home_content_html: '<h1>Welcome to the Sample App</h1>
     <h2>
       This is the home page for the
