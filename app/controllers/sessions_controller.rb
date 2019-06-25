@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:session][:password])
       flash[:success] = t "login_success"
       remember_me_checked params[:session][:remember_me], user
-      redirect_to user
+      redirect_back_or user
     else
       flash[:danger] = t "login_fail"
       render :new
