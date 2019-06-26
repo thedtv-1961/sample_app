@@ -23,7 +23,16 @@ Rails.application.configure do
 
   config.active_support.deprecation = :stderr
 
-  config.action_mailer.default_url_options = { host: Settings.test_host,
-    protocol: Settings.test_protocol }
+  config.action_mailer.default_url_options = { host: ENV["mail_host"],
+                                               protocol: ENV["mail_protocol"] }
+  config.action_mailer.smtp_settings = {
+      address: ENV["mail_server"],
+      port: ENV["mail_post"],
+      user_name: ENV["mail_username"],
+      password: ENV["mail_password"],
+      authentication: ENV["mail_authentication"],
+      enable_starttls_auto: ENV["mail_enable_starttls_auto"]
+  }
+
 
 end
