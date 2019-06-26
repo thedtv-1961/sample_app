@@ -23,4 +23,7 @@ Rails.application.configure do
 
   config.active_support.deprecation = :stderr
 
+  config.action_mailer.default_url_options = { host: Settings.test_host,
+    protocol: Settings.test_protocol }
+
 end
