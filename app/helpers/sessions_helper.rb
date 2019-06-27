@@ -37,7 +37,9 @@ module SessionsHelper
 
   def forget user
     user.forget
-    cookies.delete [:user_id, :remember_token]
+    # cookies.delete [:user_id, :remember_token]
+    cookies.delete :user_id
+    cookies.delete :remember_token
   end
 
   def store_url_back_location
