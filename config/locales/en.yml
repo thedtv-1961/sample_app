@@ -29,6 +29,8 @@ en:
   user_delete_success: "User deleted"
   user_delete_fail: "User delete failed"
   delete: "Delete"
+  micropost_delete: "Micropost deleted"
+  micropost_delete_fail: "Micropost delete failed!"
   activate: "Activate"
   confirm: "You sure?"
   version: "v %{version}"
@@ -50,11 +52,19 @@ en:
   profile_update: "Profile updated"
   login_fail: "Login failed"
   please_login: "Please log in."
+  micropost_count: "Microposts (%{count})"
+  micropost_create_success: "Micropost created!"
+  view_my_profile: "view my profile"
+  placeholder_content_post: "Compose new micropost..."
+  micropost_feed: "Micropost Feed"
   txt_name: "Name"
   txt_email: "Email"
   txt_password: "Password"
   txt_password_confirmation: "Confirmation"
   txt_pwd_can_not_empty: "Can't be empty"
+  btn_post: "Post"
+  img_error: "should be less than %{size}MB"
+  img_over_size_error: "Maximum file size is %{size}MB. Please choose a smaller file."
   mail:
     reset_pwd:
       click_link_bellow: "To reset your password click the link below:"
@@ -62,8 +72,8 @@ en:
       content: "If you did not request your password to be reset, please ignore this email and
                   your password will stay as it is."
   error:
-    one: "The form contains %{count} error"
-    other: "The form contains %{count} errors"
+    one: "The form contains %{count} error."
+    other: "The form contains %{count} errors."
   email_content_activation: "Welcome to the Sample App! Click on the link below to activate your account:"
   home_content_html: '<h1>Welcome to the Sample App</h1>
     <h2>
@@ -87,3 +97,4 @@ en:
     book</a>.'
   footer_content_html: 'The <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
     by <a href="http://www.michaelhartl.com/">Michael Hartl</a>'
+  micropost_item_content: "Posted %{time} ago."

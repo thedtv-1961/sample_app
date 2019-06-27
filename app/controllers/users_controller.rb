@@ -8,11 +8,13 @@ class UsersController < ApplicationController
 
   def index
     @users = User.user_activated
-                 .paginate page: params[:page], per_page: Settings.per_page
+      .paginate page: params[:page], per_page: Settings.user_per_page
   end
 
   def show
     redirect_to root_path unless @user.activated?
+    @microposts = @user.microposts.newest
+      .paginate page: params[:page], per_page: Settings.micropost_per_page
   end
 
   def new
@@ -63,15 +65,6 @@ class UsersController < ApplicationController
 
     flash[:warning] = t "user_not_exists"
     redirect_to root_path
-  end
-
-  # Confirms a logged-in user.
-  def logged_in_user
-    return if logged_in?
-
-    store_url_back_location
-    flash[:danger] = t "please_login"
-    redirect_to login_path
   end
 
   # Confirm the correct user

@@ -32,7 +32,7 @@ class SessionsController < ApplicationController
   def user_not_activated checked, user
     unless user.activated?
       flash[:warning] = t "account_not_activated"
-      return redirect_to root_url
+      return redirect_to root_path
     end
     flash[:success] = t "login_success"
     remember_me_checked checked, user

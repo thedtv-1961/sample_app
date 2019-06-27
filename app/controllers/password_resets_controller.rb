@@ -60,6 +60,7 @@ class PasswordResetsController < ApplicationController
   def check_email
     @user = User.find_by email: params[:password_reset][:email]
     return if @user
+
     flash.now[:danger] = t "email_addr_not_found"
     return render :new
   end
