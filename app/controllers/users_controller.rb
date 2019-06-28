@@ -1,20 +1,21 @@
 class UsersController < ApplicationController
-  include SessionsHelper
 
+  before_action :check_user_logged_in, only: %i(new create)
   before_action :logged_in_user, except: %i(new create)
   before_action :load_user, except: %i(index new create)
   before_action :correct_user, only: %i(edit update)
   before_action :admin_user, only: :destroy
 
   def index
-    @users = User.user_activated
-      .paginate page: params[:page], per_page: Settings.user_per_page
+    @users = User.user_activated.paginate page: params[:page],
+      per_page: Settings.user_per_page
   end
 
   def show
     redirect_to root_path unless @user.activated?
-    @microposts = @user.microposts.newest
-      .paginate page: params[:page], per_page: Settings.micropost_per_page
+
+    @microposts = @user.microposts.newest.paginate page: params[:page],
+      per_page: Settings.micropost_per_page
   end
 
   def new
@@ -50,6 +51,18 @@ class UsersController < ApplicationController
       flash[:danger] = t "user_delete_fail"
     end
     redirect_to users_path
+  end
+
+  def following
+    @title = t "following"
+    @users = @user.following.paginate(page: params[:page])
+    render "users/show_follow"
+  end
+
+  def followers
+    @title = t "follower"
+    @users = @user.followers.paginate(page: params[:page])
+    render "users/show_follow"
   end
 
   private

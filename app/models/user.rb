@@ -4,6 +4,12 @@ class User < ApplicationRecord
   before_save :downcase_email
 
   has_many :microposts, dependent: :destroy
+  has_many :active_relationships, class_name: Relationship.name,
+    foreign_key: :follower_id, dependent: :destroy
+  has_many :passive_relationships, class_name: Relationship.name,
+    foreign_key: :followed_id, dependent: :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
 
   validates :name, presence: true,
     length: {maximum: Settings.name_length_maximum}
@@ -18,6 +24,10 @@ class User < ApplicationRecord
   has_secure_password
 
   scope :user_activated, ->{where activated: true}
+
+  def feed
+    Micropost.follow_current_user Relationship.follower_ids(id), id
+  end
 
   def remember
     self.remember_token = User.new_token
@@ -54,6 +64,18 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < Settings.hours_expire.hours.ago
+  end
+
+  def follow other_user
+    following << other_user
+  end
+
+  def unfollow other_user
+    following.delete other_user
+  end
+
+  def following? other_user
+    following.include? other_user
   end
 
   class << self

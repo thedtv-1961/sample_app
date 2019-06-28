@@ -1,5 +1,4 @@
 class PasswordResetsController < ApplicationController
-  include SessionsHelper
 
   before_action :load_user, :valid_user, :check_expiration,
     only: %i(edit update)
@@ -47,12 +46,14 @@ class PasswordResetsController < ApplicationController
   def valid_user
     unless @user.activated? &&
            @user.authenticated?(:reset, params[:id])
+      flash[:warning] = t "user_not_permission"
       redirect_to root_path
     end
   end
 
   def check_expiration
     return unless @user.password_reset_expired?
+
     flash[:danger] = t "password_reset_expired"
     redirect_to new_password_reset_path
   end
@@ -62,6 +63,6 @@ class PasswordResetsController < ApplicationController
     return if @user
 
     flash.now[:danger] = t "email_addr_not_found"
-    return render :new
+    render :new
   end
 end

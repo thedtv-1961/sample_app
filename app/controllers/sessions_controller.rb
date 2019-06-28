@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-  include SessionsHelper
+
+  before_action :check_user_logged_in, except: :destroy
 
   def new; end
 
