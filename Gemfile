@@ -13,6 +13,7 @@ gem "config"
 gem "faker", "1.9.4"
 gem "figaro"
 gem "fog", "1.40.0"
+gem "i18n-js"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem "mini_magick", "4.7.0"
@@ -27,7 +28,6 @@ gem "turbolinks", "~> 5"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "uglifier", ">= 1.3.0"
 gem "will_paginate", "~> 3.1.0"
-gem "i18n-js"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
@@ -47,6 +47,6 @@ group :test do
   gem "selenium-webdriver"
 end
 
-# group :production do
-#   gem "pg", "0.20.0"
-# end
+group :production do
+  gem "pg"
+end

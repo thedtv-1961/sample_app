@@ -31,14 +31,14 @@
 /config/master.key
 
 # Ignore for database config
-/config/database.yml
+# /config/database.yml
 .idea/
 
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
 .DS_Store
-config/application.yml
+# config/application.yml
 
 # Ignore uploaded test images.
 /public/uploads

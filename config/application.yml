@@ -1,0 +1,10 @@
+mail_default_sender: "SampleApp"
+mail_host: "http://localhost:3000"
+mail_protocol: "http"
+mail_server: "smtp.gmail.com"
+mail_post: 587
+mail_username: "dtvthe2@gmail.com"
+mail_password: ""
+mail_authentication: "plain"
+mail_enable_starttls_auto: true
+provider: "AWS"
