@@ -12,7 +12,6 @@ gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "faker", "1.9.4"
 gem "figaro"
-gem "fog", "1.40.0"
 gem "i18n-js"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
@@ -48,5 +47,6 @@ group :test do
 end
 
 group :production do
+  gem "fog", "1.40.0"
   gem "pg"
 end
