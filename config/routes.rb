@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
+  match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete ]
   resources :users do
     member do
       get :following, :followers
