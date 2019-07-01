@@ -1,0 +1,18 @@
+development:
+  cloud_name: "dtvthe"
+  api_key: "623159775831414"
+  api_secret: "6OFbju0Zpu5JaSQyeqbguXucsRU"
+  secure: true
+  cdn_subdomain: false
+production:
+  cloud_name: "dtvthe"
+  api_key: "623159775831414"
+  api_secret: "6OFbju0Zpu5JaSQyeqbguXucsRU"
+  secure: true
+  cdn_subdomain: true
+test:
+  cloud_name: "dtvthe"
+  api_key: "623159775831414"
+  api_secret: "6OFbju0Zpu5JaSQyeqbguXucsRU"
+  secure: true
+  cdn_subdomain: false

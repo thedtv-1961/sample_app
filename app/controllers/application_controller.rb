@@ -23,4 +23,9 @@ class ApplicationController < ActionController::Base
   def default_url_options
     {locale: I18n.locale}
   end
+
+  def render_not_found
+    render file: "public/404.html", layout: false, status: :not_found
+  end
+
 end

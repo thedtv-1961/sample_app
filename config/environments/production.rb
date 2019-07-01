@@ -48,4 +48,7 @@ Rails.application.configure do
     authentication: ENV["mail_authentication"],
     enable_starttls_auto: ENV["mail_enable_starttls_auto"]
   }
+
+  # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  # config.middleware.use I18n::JS::Middleware
 end

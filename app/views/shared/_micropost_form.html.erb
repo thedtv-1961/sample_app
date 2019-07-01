@@ -1,5 +1,6 @@
 <%= form_for @micropost do |f| %>
   <%= render "layouts/shared/error_messages", object: f.object %>
+    <%= f.hidden_field :picture_cache %>
   <div class="field">
     <%= f.text_area :content, placeholder: t("placeholder_content_post") %>
   </div>
