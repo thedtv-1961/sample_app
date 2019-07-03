@@ -5,6 +5,23 @@ class Relationship < ApplicationRecord
   validates :follower_id, presence: true
   validates :followed_id, presence: true
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   scope :follower_ids,
     ->(user_id){where(follower_id: user_id).pluck(:followed_id)}
 end

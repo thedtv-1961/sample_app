@@ -5,15 +5,17 @@ class User < ApplicationRecord
 
   has_many :microposts, dependent: :destroy
 
+  # Mạc định rails sẽ lấy tên bảng + "_id" để lấy khóa ngoại, nhưng trường hợp
+  # muốn chỉ rõ cột nào là khóa ngoại thì phải chỉ rõ class là gì tên cột là gì
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: :follower_id, dependent: :destroy
-
   has_many :passive_relationships, class_name: Relationship.name,
     foreign_key: :followed_id, dependent: :destroy
 
 
+  # source: :followed hay  :follower là do mình thự quy định , vì nếu ko khai
+  # báo như vậy rails sẽ lấy cái class User nên vì vậy phải chỉ đặt tên cho nó
   has_many :following, through: :active_relationships, source: :followed
-
   has_many :followers, through: :passive_relationships, source: :follower
 
 
